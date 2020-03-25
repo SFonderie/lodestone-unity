@@ -1,4 +1,4 @@
 ﻿public enum LodestoneColor
 {
-	Red, Blue, Yellow
+	Red, Blue, Yellow, White
 }
