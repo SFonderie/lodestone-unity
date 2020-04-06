@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/FirstLevelSydneyEdition.unity
+  isLoaded: 1
+  isActive: 1
