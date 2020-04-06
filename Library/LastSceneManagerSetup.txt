@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/FirstLevelFirstVersion.unity
+- path: Assets/FirstLevel_Jay_Lodestone.unity
   isLoaded: 1
   isActive: 1
