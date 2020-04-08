@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -21,10 +22,21 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField]
 	[Tooltip("Gravity is constantly applied to the controller manually.")]
 	private float _gravity = 18.0f;
+
+	[Header("GUI Hooks")]
+	[SerializeField]
+	[Tooltip("This is the text box that tutorials will be printed to.")]
+	private Text _tutorialText;
+
+	[SerializeField]
+	[Tooltip("How long should Tutorials be rendered.")]
+	private double _tutorialLength;
 	#endregion
 
 	#region Class Fields
 	private CharacterController _controller;
+
+	private double _tutorialTimeStart = 0.0f;
 	#endregion
 
 	#region Properties
@@ -62,5 +74,18 @@ public class PlayerMovement : MonoBehaviour
 		
 		Speed += new Vector3(0, -_gravity * Time.deltaTime, 0);
 		_controller.Move(Speed * Time.deltaTime);
+
+		if(_tutorialText.enabled && Time.time > _tutorialTimeStart + _tutorialLength)
+		{
+			_tutorialText.enabled = false;
+			_tutorialTimeStart = 0.0f;
+		}
+	}
+
+	public void ShowTutorial(string tutorialText)
+	{
+		_tutorialText.enabled = true;
+		_tutorialText.text = tutorialText;
+		_tutorialTimeStart = Time.time;
 	}
 }
