@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/Lodestone_Jay.unity
-  isLoaded: 1
-  isActive: 1
