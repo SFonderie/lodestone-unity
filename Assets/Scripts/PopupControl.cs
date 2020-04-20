@@ -11,7 +11,6 @@ public class PopupControl : MonoBehaviour
 
 		if(p != null)
 		{
-			Debug.Log("TEST 3");
 			p.ShowTutorial(PopupText);
 		}
 	}
