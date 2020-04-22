@@ -34,6 +34,10 @@ public class BarrierControl : MonoBehaviour
 	[SerializeField]
 	[Tooltip("The colors and amounts of Lodestones needed to bypass this Barrier.")]
 	private List<BarrierKey> _barrierKeys = GetDefaultBarrierKeys();
+
+	[SerializeField]
+	[Tooltip("The light used by this barrier.")]
+	private Light _barrierLight = null;
 	#endregion
 
 	#region Class Fields
@@ -62,6 +66,7 @@ public class BarrierControl : MonoBehaviour
 		}
 
 		_barrierCollider.isTrigger = isOpen;
+		_barrierLight.enabled = !isOpen;
 
 		foreach (BarrierKey key in _currentKeys)
 		{
